@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<!-- com.scwang.smartrefresh.layout.SmartRefreshLayout 的 头部布局-->
+    <FrameLayout
+        android:id="@+id/ali_frame"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical">
+
+
+        <ImageView
+            android:id="@+id/ali_header_rotate"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/pop_reload"
+            tools:layout_marginRight="40dp"
+            />
+
+        <include layout="@layout/layout_progress_bar_rotate_small"/>
+
+    </FrameLayout>
+</LinearLayout>

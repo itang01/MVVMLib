@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:orientation="horizontal"
+    tools:background="@color/colorPrimaryDark">
+
+    <FrameLayout
+        android:id="@+id/layMenu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivMenu2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="44dp"
+            android:minHeight="44dp"
+            android:padding="10dp"
+            tools:src="@mipmap/btn_history" />
+
+        <TextView
+            android:id="@+id/tvMenu2"
+            style="@style/text_normal_gray_6_style"
+            android:gravity="center"
+            android:minWidth="44dp"
+            android:minHeight="44dp"
+            android:padding="8dp"
+            android:textColor="@color/font_yellow"
+            tools:text="菜单1" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layMenu1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivMenu1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="44dp"
+            android:minHeight="44dp"
+            android:padding="10dp"
+            tools:src="@mipmap/btn_history" />
+
+        <TextView
+            android:id="@+id/tvMenu1"
+            style="@style/text_normal_gray_6_style"
+            android:gravity="center"
+            android:minWidth="44dp"
+            android:minHeight="44dp"
+            android:padding="8dp"
+            android:textColor="@color/font_yellow"
+            tools:text="菜单1" />
+    </FrameLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

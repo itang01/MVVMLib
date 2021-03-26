@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/bg_color</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/right_out</item>
+    </style>
+
+    <style name="text_normal_gray_6_style" parent="wrap_content">
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:textColor">@color/font_gray_6</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/font_black</item>
+        <item name="android:textColorPrimary">@color/font_black</item>
+    </style>
+
+    <style name="wrap_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="match_wrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="match_match">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="linear_match_wrap_h_style" parent="match_wrap">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="linear_match_wrap_v_style" parent="match_wrap">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="linear_wrap_content_h_style" parent="wrap_content">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="linear_wrap_content_v_style" parent="wrap_content">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="text_small_gray_9_style" parent="wrap_content">
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:textColor">@color/font_gray_9</item>
+    </style>
+
+</resources>

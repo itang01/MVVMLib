@@ -1,0 +1,137 @@
+apply plugin: 'com.android.library'
+apply plugin: 'dagger.hilt.android.plugin'
+android {
+    compileSdkVersion rootProject.ext.versions.compileSdkVersion
+    defaultConfig {
+        // 注意：当module单独运行的时候这里要设置applicationId，不然会因为获取不到 regId（就是阿里云推送的deviceId），而导致登录失败
+
+        minSdkVersion rootProject.ext.versions.minSdkVersion
+        targetSdkVersion rootProject.ext.versions.targetSdkVersion
+        versionCode rootProject.ext.versions.versionCode
+        versionName rootProject.ext.versions.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [AROUTER_MODULE_NAME: project.getName(),
+                             "room.schemaLocation": "$projectDir/schemas".toString()]
+                includeCompileClasspath = true
+            }
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    buildTypes {//这里的(其他Module的也需要配置)buildTypes要和App build.gradle 中的保持一致，不然会报错！！！
+        debug {
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation rootProject.ext.android.junitJavaTest
+    androidTestImplementation rootProject.ext.android.junitAndroidTest
+    androidTestImplementation rootProject.ext.android["espresso-core"]
+
+    //api project(path: ':commonlib')
+    api 'com.wuhenzhizao:titlebar:1.2.0'
+
+    //support
+    api rootProject.ext.android["support-v4"]
+    api rootProject.ext.android.appcompat
+    api rootProject.ext.android.recyclerview
+    api rootProject.ext.android.cardview
+    api rootProject.ext.android.material
+    api rootProject.ext.android.multidex
+    //rxjava
+    api rootProject.ext.dependencies["rxjava"]
+    api rootProject.ext.dependencies["rxandroid"]
+    //rx管理View的生命周期
+    api(rootProject.ext.dependencies.rxlifecycle) {
+        exclude group: 'com.android.support'
+    }
+    api(rootProject.ext.dependencies["rxlifecycle-components"]) {
+        exclude group: 'com.android.support'
+    }
+    //rxbinding
+    api(rootProject.ext.dependencies.rxbinding) {
+        exclude group: 'com.android.support'
+    }
+    //rx权限请求
+    api(rootProject.ext.dependencies.rxpermissions) {
+        exclude group: 'com.android.support'
+    }
+    //network
+    api rootProject.ext.dependencies.okhttp
+    api rootProject.ext.dependencies.retrofit
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    //json解析
+    api rootProject.ext.dependencies.gson
+    //material-dialogs
+    api(rootProject.ext.dependencies["material-dialogs-core"]) {
+        exclude group: 'com.android.support'
+    }
+    api(rootProject.ext.dependencies["material-dialogs-commons"]) {
+        exclude group: 'com.android.support'
+    }
+    //glide图片加载库
+    api(rootProject.ext.dependencies.glide) {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+    //多状态视图
+    api rootProject.ext.dependencies["multiple-status-view"]
+
+    //解决xx找不到Android声明库问题
+    annotationProcessor 'androidx.annotation:annotation:1.1.0'
+
+    //fix 官方 Fragment bug
+    //api 'me.yokeyword:fragmentation:1.3.6'，升级androidx引入databinding后，产生了兼容性问题，需要更改为下面：（因为会报错：java.lang.NoSuchFieldError: No instance field mActive of type Landroid/util/SparseArray; in class Landroidx/fragment/app/FragmentManagerImpl;）
+    api 'me.yokeyword:fragmentationx:1.0.1'
+
+    //下拉刷新库：SmartRefreshLayout
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5'
+
+    //FlycoTabLayout：一个Android TabLayout库,目前有3个TabLayout：SlidingTabLayout、CommonTabLayout、SegmentTabLayout
+    api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2'
+    //FlycoLabelView：一个简单的Android标签控件.（左上右下 四个角的倾斜label）
+    api 'com.flyco.labelview:FlycoLabelView_Lib:1.0.2'
+    //FlycoDialog-Master：一个强大的Android对话框库,简化自定义对话框.支持2.2+.
+    api 'com.flyco.dialog:FlycoDialog_Lib:1.3.2'
+
+    //tools
+    //依赖注入 hilt
+    implementation "com.google.dagger:hilt-android:2.28-alpha"
+    annotationProcessor "com.google.dagger:hilt-android-compiler:2.28-alpha"
+
+    api "com.orhanobut:logger:$rootProject.loggerVersion"//beautiful log utils
+
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    //tools
+    api(rootProject.ext.dependencies["arouter"]) {
+        exclude module: 'support-v4'
+        exclude module: 'support-annotations'
+    }
+    if (!rootProject.ext.isIntegreatedMode) {
+        annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    } else {
+        compileOnly rootProject.ext.dependencies["arouter-compiler"]
+    }
+}

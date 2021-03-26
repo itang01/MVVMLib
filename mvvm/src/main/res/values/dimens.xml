@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- font sizes -->
+    <dimen name="font_larger">18sp</dimen>
+    <dimen name="font_16sp">16sp</dimen>
+    <dimen name="font_large">15sp</dimen>
+    <dimen name="font_normal">14sp</dimen>
+    <dimen name="font_normal_less">13sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font_small_er">11sp</dimen>
+    <dimen name="font_small_less">10sp</dimen>
+
+    <dimen name="common_load_more_progress_size">30dp</dimen>
+    <dimen name="common_load_more_padding">20dp</dimen>
+    <dimen name="common_loading_progress_size">45dp</dimen>
+    <dimen name="common_loading_text_margin">10dp</dimen>
+    <dimen name="common_loading_text_lines_spacing">5dp</dimen>
+
+    <!--tab栏的高度-->
+    <dimen name="tab_height">44dp</dimen>
+    <!--按钮高度-->
+    <dimen name="btn_height">46dp</dimen>
+    <!--底部按钮的高度-->
+    <dimen name="bottom_btn_height">46dp</dimen>
+    <dimen name="bottom_btn_height2">48dp</dimen>
+    <dimen name="bottom_btn_height3">44dp</dimen>
+    <dimen name="bottom_btn_height49dp">49dp</dimen>
+
+    <!-- typical spacing between two views -->
+    <dimen name="spacing_huge">16dp</dimen>
+    <dimen name="spacing_larger">15dp</dimen>
+    <dimen name="spacing_large">14dp</dimen>
+    <dimen name="spacing_normal">12dp</dimen>
+    <dimen name="spacing_small">10dp</dimen>
+    <dimen name="spacing_tiny">8dp</dimen>
+    <dimen name="spacing_tiny_less">6dp</dimen>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#252525</color>
+    <color name="colorPrimaryDark">#1a1919</color>
+    <color name="colorAccent">#F8C514</color>
+    <color name="colorAccentDarker">#c6a22c</color>
+    <color name="bg_color">#f7f7f5</color>
+    <color name="color_eeeeee">#eeeeee</color>
+    <color name="color_ff7272">#ff7272</color>
+    <color name="colorDialogBtnBgDefaultColorAccent">@color/colorAccent</color>
+
+    <color name="white">#ffffff</color>
+    <color name="font_black">#333333</color>
+    <color name="font_gray_6">#666666</color>
+    <color name="font_gray_9">#999999</color>
+    <color name="color_f8c513">#f8c513</color>
+    <color name="transparent_55ff">#44000000</color>
+
+    <color name="color_d1d1d1">#d1d1d1</color>
+    <color name="alpha_30_black">#4D000000</color>
+    <color name="divide_line">#d8eaeaea</color>
+    <color name="color_fff1e4">#fff1e4</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="font_white">#ffffff</color>
+    <color name="font_yellow">#f8c513</color>
+    <color name="line_gray">#d8eaeaea</color>
+    <color name="font_hint">#d8eaeaea</color>
+    <color name="font_blue">#448cc6</color>
+    <color name="font_pink">#ff7272</color>
+    <color name="font_orange">#EB6800</color>
+    <color name="font_green">#539b46</color>
+    <color name="font_green2">#87ba54</color>    <color name="colorBtnTextWhite">@color/font_white</color>
+    <color name="colorBtnTextBlack">@color/font_black</color>
+
+    <color name="color_btn_bg_default_grey">#87acacac</color>
+    <color name="color_btn_bg_pressed_grey">#a7a7a7</color>
+    <color name="color_btn_bg_default_color_accent">@color/colorAccent</color>
+    <color name="color_btn_bg_pressed_color_accent">@color/colorAccentDarker</color>
+    <color name="ripple_color">#b3d1d0d0</color>
+    <color name="ripple_light">@color/ripple_color</color>
+    <color name="color_ebebeb">#ebebeb</color>
+    <color name="bottom_orange">#f8c514</color>
+    <color name="bottom_orange_dark">#d2a60e</color>
+    <color name="bg_pink">#ff7272</color>
+    <color name="bg_white">#fff</color>
+    <color name="filter_item_pressed">@color/bottom_navigation_active_dark</color>
+    <!--bottom_navigation-->
+    <color name="bottom_navigation_active">#09C377</color>
+    <color name="bottom_navigation_active_dark">#09C377</color>
+    <color name="bottom_navigation_inactive">#9B9B9B</color>
+    <color name="status_view_text_color">@color/font_gray_9</color>
+</resources>

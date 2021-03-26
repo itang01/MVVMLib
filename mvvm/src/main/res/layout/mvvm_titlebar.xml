@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.itang.mvvm.jetpack.t2vm.BaseUiViewModel" />
+    </data>
+
+    <com.itang.mvvm.widgit.MyCommonTitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:centerText="标题"
+        app:centerTextColor="@color/font_white"
+        app:centerType="textView"
+        app:fillStatusBar="true"
+        app:leftImageResource="@mipmap/btn_bar_back"
+        app:rightType="customView"
+        app:rightCustomView="@layout/layout_titltbar_right_custom_view"
+        app:leftType="imageButton"
+        app:showBottomLine="true"
+        app:statusBarColor="@color/colorPrimaryDark"
+        app:statusBarMode="light"
+        app:titleBarColor="@color/colorPrimary"
+
+        binding:onClickLeftViewCommand="@{vm.onLeftViewClickCommand}"
+        binding:onMenu1ClickCommand="@{vm.onMenu1ClickCommand}"
+        binding:onMenu2ClickCommand="@{vm.onMenu2ClickCommand}"
+        binding:onClickCenterViewCommand="@{vm.onCenterViewClickCommand}"
+
+        binding:centerTextField="@{vm.centerTextField}"
+        binding:leftTypeField="@{vm.leftTypeField}"
+
+        binding:showTitleBarField="@{vm.showTitleBarField}"
+        binding:menu1TypeField="@{vm.menu1TypeField}"
+        binding:menu1TextField="@{vm.menu1TextField}"
+        binding:menu1ImageResourceField="@{vm.menu1ImageResourceField}"
+        binding:menu2TypeField="@{vm.menu2TypeField}"
+        binding:menu2TextField="@{vm.menu2TextField}"
+        binding:menu2ImageResourceField="@{vm.menu2ImageResourceField}"
+
+        tools:layout_height="@dimen/action_bar_height" />
+    <!--
+
+    -->
+</layout>
